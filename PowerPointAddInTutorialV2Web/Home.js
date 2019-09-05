@@ -15,6 +15,7 @@
             // TODO4: Assign event handler for insert-text button.
             $('#insert-text').click(insertText);
             // TODO6: Assign event handler for get-slide-metadata button.
+            $('#get-slide-metadata').click(getSlideMetadata);
             // TODO8: Assign event handlers for the four navigation buttons.
         });
     };
@@ -55,6 +56,17 @@
     }
 
     // TODO7: Define the getSlideMetadata function.
+    function getSlideMetadata() {
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange,
+            function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    showNotification("Error", asyncResult.error.message);
+                } else {
+                    showNotification("Metadata for selected slide(s):", JSON.stringify(asyncResult.value), null, 2);
+                }
+            }
+        );
+    }
 
     // TODO9: Define the navigation functions.
 
