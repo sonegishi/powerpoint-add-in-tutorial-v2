@@ -13,6 +13,7 @@
             // TODO1: Assign event handler for insert-image button.
             $('#insert-image').click(insertImage);
             // TODO4: Assign event handler for insert-text button.
+            $('#insert-text').click(insertText);
             // TODO6: Assign event handler for get-slide-metadata button.
             // TODO8: Assign event handlers for the four navigation buttons.
         });
@@ -44,6 +45,14 @@
     }
 
     // TODO5: Define the insertText function.
+    function insertText() {
+        Office.context.document.setSelectedDataAsync('Hello World!',
+            function (asyncResult) {
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
 
     // TODO7: Define the getSlideMetadata function.
 
