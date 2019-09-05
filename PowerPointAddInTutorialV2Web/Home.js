@@ -17,6 +17,10 @@
             // TODO6: Assign event handler for get-slide-metadata button.
             $('#get-slide-metadata').click(getSlideMetadata);
             // TODO8: Assign event handlers for the four navigation buttons.
+            $('#go-to-first-slide').click(goToFirstSlide);
+            $('#go-to-next-slide').click(goToNextSlide);
+            $('#go-to-previous-slide').click(goToPreviousSlide);
+            $('#go-to-last-slide').click(goToLastSlide);
         });
     };
 
@@ -69,6 +73,41 @@
     }
 
     // TODO9: Define the navigation functions.
+    function goToFirstSlide() {
+        Office.context.document.goToByIdAsync(Office.Index.First, Office.GoToType.Index,
+            function (asyncResult) {
+                if (asyncResult.status == "failed") {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
+
+    function goToLastSlide() {
+        Office.context.document.goToByIdAsync(Office.Index.Last, Office.GoToType.Index,
+            function (asyncResult) {
+                if (asyncResult.status == "failed") {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
+
+    function goToPreviousSlide() {
+        Office.context.document.goToByIdAsync(Office.Index.Previous, Office.GoToType.Index,
+            function (asyncResult) {
+                if (asyncResult.status == "failed") {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
+
+    function goToNextSlide() {
+        Office.context.document.goToByIdAsync(Office.Index.Next, Office.GoToType.Index,
+            function (asyncResult) {
+                if (asyncResult.status == "failed") {
+                    showNotification("Error", asyncResult.error.message);
+                }
+            });
+    }
 
     // Helper function for displaying notifications
     function showNotification(header, content) {
