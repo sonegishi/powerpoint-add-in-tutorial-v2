@@ -24,21 +24,25 @@
     <!-- link rel="stylesheet" href="Content/fabric.components.min.css" -->
 </head>
 <body>
+    <!-- TODO2: Create the content-header div. -->
+    <div id="content-header">
+        <div class="ms-Grid ms-bgColor-neutralPrimary">
+            <div class="ms-Grid-row">
+                <div class="padding ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12"> <div class="ms-font-xl ms-fontColor-white ms-fontWeight-semibold">My PowerPoint add-in</div></div>
+            </div>
+        </div>
+    </div>
     <div id="content-main">
         <div class="padding">
-            <br />
-            <p class="ms-font-xxl ms-fontColor-neutralSecondary ms-fontWeight-semilight">Sample</p>
-            <br />
-            <div class="ms-font-xl ms-fontColor-neutralTertiary">Getting Started</div>
-            <p class="ms-font-m-plus ms-fontColor-neutralTertiary">This sample reads the value of the text you have selected in the slide. </p>
-             <br /><br />
-            <button class="ms-Button ms-Button--primary" id="get-data-from-selection">
+            <!-- TODO1: Create the insert-image button. -->
+            <button class="ms-Button ms-Button--primary" id="insert-image">
                 <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-                <span class="ms-Button-label">Get data from selection</span>
-                <span class="ms-Button-description">Gets the selected data and displays it.</span>
+                <span class="ms-Button-label">Insert Image</span>
+                <span class="ms-Button-description">Gets the photo of the day that shows on the Bing home page and adds it to the slide.</span>
             </button>
-            <br /><br /><br />
-            <div class="ms-font-m"><a target="_blank" class="ms-Link ms-Link--hero" href="https://go.microsoft.com/fwlink/?LinkId=276812">Find more samples online...</a></div>
+            <!-- TODO3: Create the insert-text button. -->
+            <!-- TODO4: Create the get-slide-metadata button. -->
+            <!-- TODO5: Create the go-to-slide buttons. -->
         </div>
     </div>
     <div class="footer">
